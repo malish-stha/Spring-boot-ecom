@@ -14,12 +14,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+//@RequestMapping("/api")
 public class CategoryController  {
 
     @Autowired
     private CategoryService categoryService;
 
-    @GetMapping("/api/public/categories")
+    @GetMapping()
     private ResponseEntity<List<Category>> getAllCategories(){
     List<Category> categories = categoryService.getAllCategories();
     return new ResponseEntity<>(categories, HttpStatus.OK);
